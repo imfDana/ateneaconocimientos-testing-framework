@@ -17,10 +17,13 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('TC-03: Student Registration (Sign up)', async ({ page }) => {
-  const email = `students${Date.now()}@email.com`;
+  const email = `students${Date.now()}@automation.com`;
   await homePage.NavigateToHome();
   await homePage.NavigateToRegister();
   await registerPage.RegisterStudent('Ana', 'Pérez', email, 'Atenea123');
+  // Verify that the request to /api/students/register retreives a 201  
+  await helpers.checkAPIResponse('/api/students/register', 'POST', 201);
+
   await expect(page).toHaveURL(/.*verification-pending.*/);
   await helpers.verifyVisibleText('Verifica tu email');
   await page.waitForTimeout(5000);
