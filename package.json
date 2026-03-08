@@ -1,0 +1,23 @@
+{
+  "name": "ateneaconocimientos-testing-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imfDana/ateneaconocimientos-testing-framework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imfDana/ateneaconocimientos-testing-framework/issues"
+  },
+  "homepage": "https://github.com/imfDana/ateneaconocimientos-testing-framework#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.5",
+    "dotenv": "^17.3.1"
+  }
+}
