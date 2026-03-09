@@ -1,7 +1,7 @@
 import { Locator, Page } from "@playwright/test";
 
 export class HomePage {
-    readonly page;  
+    readonly page;
     readonly createAccountBtn: Locator;
     readonly urlHome = process.env.BASE_URL;
 
@@ -11,11 +11,11 @@ export class HomePage {
     }
 
     async NavigateToHome() {
-        this.page.goto(this.urlHome!);
+        await this.page.goto(this.urlHome!);
     }
 
-    async  NavigateToRegister() {
-        this.createAccountBtn.click();
+    async NavigateToRegister() {
+        await this.createAccountBtn.click();
     }
 
 }

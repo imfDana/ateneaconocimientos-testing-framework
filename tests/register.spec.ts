@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 import dotenv from 'dotenv';
-import { HomePage } from '../pages/homePage';
-import { RegisterPage } from '../pages/registerPage';
-import { Helpers } from '../utils/helpers';
+import { HomePage } from '@pages/homePage';
+import { RegisterPage } from '@pages/registerPage';
+import { Helpers } from '@utils/helpers';
 
 let homePage: HomePage;
 let registerPage: RegisterPage;
@@ -10,7 +10,7 @@ let helpers: Helpers;
 
 dotenv.config();
 
-test.beforeEach(async ({ page }) => {
+test.beforeEach(({ page }) => {
   homePage = new HomePage(page);
   registerPage = new RegisterPage(page);
   helpers = new Helpers(page);
@@ -26,6 +26,7 @@ test('TC-03: Student Registration (Sign up)', async ({ page }) => {
 
   await expect(page).toHaveURL(/.*verification-pending.*/);
   await helpers.verifyVisibleText('Verifica tu email');
-  await page.waitForTimeout(5000);
 });
+
+
 

@@ -3,7 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ci": "playwright test --reporter=line",
+    "report:open": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier \"**/*.{ts,js,json,md}\" --write",
+    "format:check": "npm run format -- --check",
+    "prepare": "husky"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/imfDana/ateneaconocimientos-testing-framework.git"
@@ -16,8 +27,17 @@
   },
   "homepage": "https://github.com/imfDana/ateneaconocimientos-testing-framework#readme",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.58.2",
     "@types/node": "^25.3.5",
-    "dotenv": "^17.3.1"
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "dotenv": "^17.3.1",
+    "eslint": "^10.0.3",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.4.0",
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
   }
 }

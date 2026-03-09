@@ -1,4 +1,4 @@
-import { Locator, expect, Page } from '@playwright/test';
+import { expect, Page } from '@playwright/test';
 
 export class Helpers {
     readonly page: Page;
@@ -15,8 +15,8 @@ export class Helpers {
 
     async checkAPIResponse(url: string, method: string, status: number) {
         await this.page.waitForResponse(response => response.url().includes(url) &&
-            response.request().method() === 'POST' &&
-            response.status() === 201
+            response.request().method() === method &&
+            response.status() === status
         );
     }
 }
