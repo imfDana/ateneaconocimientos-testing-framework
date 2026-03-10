@@ -14,11 +14,11 @@ export class Helpers {
     }
 
     async checkAPIResponse(url: string, method: string, status: number) {
-        await this.page.waitForResponse(response => response.url().includes(url) &&
-            response.request().method() === method &&
-            response.status() === status
+        await this.page.waitForResponse(
+            (response) =>
+                response.url().includes(url) &&
+                response.request().method() === method &&
+                response.status() === status,
         );
     }
 }
-
-

@@ -1,10 +1,10 @@
-import {Locator, Page} from "@playwright/test";
+import { Locator, Page } from '@playwright/test';
 
 export class RegisterPage {
     readonly page;
     readonly inputName: Locator;
     readonly inputLastName: Locator;
-    readonly inputEmail: Locator
+    readonly inputEmail: Locator;
     readonly inputPassword: Locator;
     readonly showPasswordBtn: Locator;
     readonly inputConfirmPassword: Locator;
@@ -15,26 +15,33 @@ export class RegisterPage {
     readonly crateAccountBtn: Locator;
     readonly alreadyHaveAccountLink: Locator;
 
-    constructor( page: Page) {
+    constructor(page: Page) {
         this.page = page;
         this.inputName = page.getByRole('textbox', { name: 'Nombre' });
         this.inputLastName = page.getByRole('textbox', { name: 'Apellido' });
         this.inputEmail = page.getByRole('textbox', { name: 'Correo electrónico' });
         this.inputPassword = page.getByRole('textbox', { name: 'Contraseña', exact: true });
-        this.showPasswordBtn = page.getByRole('button', { name: 'Mostrar contraseña' }).first()
+        this.showPasswordBtn = page.getByRole('button', { name: 'Mostrar contraseña' }).first();
         this.inputConfirmPassword = page.getByRole('textbox', { name: 'Confirmar contraseña' });
-        this.showConfirmPasswordBtn = page.getByRole('button', { name: 'Mostrar contraseña' }).last();
-        this.termsAndConditionsCheckbox = page.getByRole('checkbox', { name: 'Acepto los Términos y' });
+        this.showConfirmPasswordBtn = page
+            .getByRole('button', { name: 'Mostrar contraseña' })
+            .last();
+        this.termsAndConditionsCheckbox = page.getByRole('checkbox', {
+            name: 'Acepto los Términos y',
+        });
         this.termsAndConditionsLink = page.getByRole('link', { name: 'Términos y Condiciones' });
-        this.privacyPolicyLink = page.getByRole('link', { name: 'Política de Privacidad', exact: true });
+        this.privacyPolicyLink = page.getByRole('link', {
+            name: 'Política de Privacidad',
+            exact: true,
+        });
         this.crateAccountBtn = page.getByRole('button', { name: 'Crear cuenta' });
         this.alreadyHaveAccountLink = page.getByRole('link', { name: '¿Ya tienes cuenta? Inicia' });
     }
 
     async inputNameValue(name: string) {
         await this.inputName.fill(name);
-    } 
-    
+    }
+
     async inputLastNameValue(lastName: string) {
         await this.inputLastName.fill(lastName);
     }
@@ -87,6 +94,5 @@ export class RegisterPage {
         await this.inputConfirmPasswordValue(password);
         await this.clickTermsAndConditionsCheckbox();
         await this.clickCreateAccountBtn();
-
     }
-};
+}

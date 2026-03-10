@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import { Locator, Page } from '@playwright/test';
 
 export class HomePage {
     readonly page;
@@ -7,7 +7,7 @@ export class HomePage {
 
     constructor(page: Page) {
         this.page = page;
-        this.createAccountBtn = page.getByRole('link', { name: 'Crear cuenta' })
+        this.createAccountBtn = page.getByRole('link', { name: 'Crear cuenta' });
     }
 
     async NavigateToHome() {
@@ -17,5 +17,4 @@ export class HomePage {
     async NavigateToRegister() {
         await this.createAccountBtn.click();
     }
-
 }
