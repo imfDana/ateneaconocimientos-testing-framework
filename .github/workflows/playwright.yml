@@ -6,6 +6,8 @@ on:
         branches: [main, master]
 jobs:
     test:
+        env:
+            BASE_URL: ${{ secrets.BASE_URL }}
         timeout-minutes: 60
         runs-on: ubuntu-latest
         steps:
