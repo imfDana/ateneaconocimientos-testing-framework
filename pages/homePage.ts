@@ -3,7 +3,6 @@ import { Locator, Page } from '@playwright/test';
 export class HomePage {
     readonly page;
     readonly createAccountBtn: Locator;
-    readonly urlHome = process.env.BASE_URL;
 
     constructor(page: Page) {
         this.page = page;
@@ -11,7 +10,7 @@ export class HomePage {
     }
 
     async NavigateToHome() {
-        await this.page.goto(this.urlHome!);
+        await this.page.goto('/');
     }
 
     async NavigateToRegister() {
