@@ -5,11 +5,7 @@ import path from 'path';
 
 const resolveEnFile = (): string | undefined => {
     const testEnv = process.env.TEST_ENV ?? 'qa';
-    const candidateFiles = [
-        path.resolve(__dirname, `.env.${testEnv}`),
-        `.env.${testEnv}`,
-        `.env`,
-    ];
+    const candidateFiles = [path.resolve(__dirname, `.env.${testEnv}`), `.env.${testEnv}`, `.env`];
     return candidateFiles.find((filepath) => fs.existsSync(filepath));
 };
 
@@ -17,7 +13,7 @@ const envFile = resolveEnFile();
 if (envFile) {
     console.log(`Loading environment variables from ${envFile}`);
     dotenv.config({ path: envFile });
-};
+}
 
 const baseURL = process.env.BASE_URL || 'http://localhost:3000';
 
