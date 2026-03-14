@@ -1,4 +1,21 @@
 import { defineConfig, devices } from '@playwright/test';
+import * as dotenv from 'dotenv';
+import fs from 'fs';
+import path from 'path';
+
+const resolveEnFile = (): string | undefined => {
+    const testEnv = process.env.TEST_ENV ?? 'qa';
+    const candidateFiles = [path.resolve(__dirname, `.env.${testEnv}`), `.env.${testEnv}`, `.env`];
+    return candidateFiles.find((filepath) => fs.existsSync(filepath));
+};
+
+const envFile = resolveEnFile();
+if (envFile) {
+    console.log(`Loading environment variables from ${envFile}`);
+    dotenv.config({ path: envFile });
+}
+
+const baseURL = process.env.BASE_URL || 'http://localhost:3000';
 
 /**
  * Read environment variables from file.
@@ -26,8 +43,10 @@ export default defineConfig({
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
     use: {
         /* Base URL to use in actions like `await page.goto('')`. */
-        baseURL: process.env.BASE_URL,
+        baseURL,
 
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on-first-retry',
     },
