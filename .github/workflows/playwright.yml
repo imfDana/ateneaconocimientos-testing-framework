@@ -36,7 +36,7 @@ jobs:
                   retention-days: 30
             - name: Setup Pages
               if: ${{ github.event_name == 'push' && !cancelled() }}
-              uses: actions/checkout@v5
+              uses: actions/configure-pages@v5
               with:
                   enablement: true
             - name: Upload Pages artifact
@@ -45,7 +45,7 @@ jobs:
               with:
                   path: playwright-report/
     deploy:
-        if: ${{ github.event_name == 'push' && !cancelled() }}
+        if: ${{ github.event_name == 'push' }}
         needs: test
         runs-on: ubuntu-latest
         environment:
