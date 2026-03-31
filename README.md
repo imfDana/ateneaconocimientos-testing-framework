@@ -46,16 +46,16 @@ This repository contains the automated E2E test suite for the Atenea Conocimient
 
 ## Tech Stack
 
-| Tool | Version | Purpose |
-|---|---|---|
-| [Playwright](https://playwright.dev/) | ^1.58.2 | E2E browser automation |
-| [TypeScript](https://www.typescriptlang.org/) | ^5.9.3 | Typed language for test authoring |
-| [Node.js](https://nodejs.org/) | LTS (≥18) | Runtime environment |
-| [dotenv](https://github.com/motdotla/dotenv) | ^17.3.1 | Environment variable loading |
-| [cross-env](https://github.com/kentcdodds/cross-env) | ^10.1.0 | Cross-platform env variable injection |
-| [ESLint](https://eslint.org/) | ^10.0.3 | Static code analysis |
-| [Prettier](https://prettier.io/) | ^3.8.1 | Code formatting |
-| [Husky](https://typicode.github.io/husky/) | ^9.1.7 | Git hook automation |
+| Tool                                                 | Version   | Purpose                               |
+| ---------------------------------------------------- | --------- | ------------------------------------- |
+| [Playwright](https://playwright.dev/)                | ^1.58.2   | E2E browser automation                |
+| [TypeScript](https://www.typescriptlang.org/)        | ^5.9.3    | Typed language for test authoring     |
+| [Node.js](https://nodejs.org/)                       | LTS (≥18) | Runtime environment                   |
+| [dotenv](https://github.com/motdotla/dotenv)         | ^17.3.1   | Environment variable loading          |
+| [cross-env](https://github.com/kentcdodds/cross-env) | ^10.1.0   | Cross-platform env variable injection |
+| [ESLint](https://eslint.org/)                        | ^10.0.3   | Static code analysis                  |
+| [Prettier](https://prettier.io/)                     | ^3.8.1    | Code formatting                       |
+| [Husky](https://typicode.github.io/husky/)           | ^9.1.7    | Git hook automation                   |
 
 ---
 
@@ -71,42 +71,42 @@ npm install
 
 ### Testing
 
-| Package | Version | Role |
-|---|---|---|
+| Package                                       | Version   | Role                                                                                                              |
+| --------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------- |
 | [`@playwright/test`](https://playwright.dev/) | `^1.58.2` | Core E2E testing framework — provides the test runner, browser automation APIs, assertions, and the HTML reporter |
 
 ### TypeScript
 
-| Package | Version | Role |
-|---|---|---|
-| [`typescript`](https://www.typescriptlang.org/) | `^5.9.3` | TypeScript compiler — transpiles `.ts` files and enforces strict typing |
+| Package                                                    | Version   | Role                                                                                                       |
+| ---------------------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------- |
+| [`typescript`](https://www.typescriptlang.org/)            | `^5.9.3`  | TypeScript compiler — transpiles `.ts` files and enforces strict typing                                    |
 | [`@types/node`](https://www.npmjs.com/package/@types/node) | `^25.3.5` | Type definitions for Node.js built-in modules (e.g. `fs`, `path`, `process`) used in the Playwright config |
 
 ### Linting (ESLint)
 
-| Package | Version | Role |
-|---|---|---|
-| [`eslint`](https://eslint.org/) | `^10.0.3` | Core ESLint engine — runs the linting checks |
-| [`@eslint/js`](https://www.npmjs.com/package/@eslint/js) | `^10.0.1` | Official ESLint JavaScript recommended rule set |
-| [`typescript-eslint`](https://typescript-eslint.io/) | `^8.56.1` | Meta-package that bundles the TypeScript ESLint parser and plugin together |
-| [`@typescript-eslint/parser`](https://typescript-eslint.io/packages/parser/) | `^8.56.1` | Allows ESLint to parse TypeScript syntax |
-| [`@typescript-eslint/eslint-plugin`](https://typescript-eslint.io/packages/eslint-plugin/) | `^8.56.1` | TypeScript-specific ESLint rules (e.g. no-floating-promises, no-unused-vars) |
-| [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) | `^10.1.8` | Disables ESLint rules that would conflict with Prettier formatting |
-| [`globals`](https://www.npmjs.com/package/globals) | `^17.4.0` | Provides global variable definitions (e.g. Node.js, browser) for ESLint environment configuration |
+| Package                                                                                    | Version   | Role                                                                                              |
+| ------------------------------------------------------------------------------------------ | --------- | ------------------------------------------------------------------------------------------------- |
+| [`eslint`](https://eslint.org/)                                                            | `^10.0.3` | Core ESLint engine — runs the linting checks                                                      |
+| [`@eslint/js`](https://www.npmjs.com/package/@eslint/js)                                   | `^10.0.1` | Official ESLint JavaScript recommended rule set                                                   |
+| [`typescript-eslint`](https://typescript-eslint.io/)                                       | `^8.56.1` | Meta-package that bundles the TypeScript ESLint parser and plugin together                        |
+| [`@typescript-eslint/parser`](https://typescript-eslint.io/packages/parser/)               | `^8.56.1` | Allows ESLint to parse TypeScript syntax                                                          |
+| [`@typescript-eslint/eslint-plugin`](https://typescript-eslint.io/packages/eslint-plugin/) | `^8.56.1` | TypeScript-specific ESLint rules (e.g. no-floating-promises, no-unused-vars)                      |
+| [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier)             | `^10.1.8` | Disables ESLint rules that would conflict with Prettier formatting                                |
+| [`globals`](https://www.npmjs.com/package/globals)                                         | `^17.4.0` | Provides global variable definitions (e.g. Node.js, browser) for ESLint environment configuration |
 
 ### Formatting
 
-| Package | Version | Role |
-|---|---|---|
+| Package                            | Version  | Role                                                                                                     |
+| ---------------------------------- | -------- | -------------------------------------------------------------------------------------------------------- |
 | [`prettier`](https://prettier.io/) | `^3.8.1` | Opinionated code formatter — enforces consistent style across all `.ts`, `.js`, `.json`, and `.md` files |
 
 ### Utilities
 
-| Package | Version | Role |
-|---|---|---|
-| [`dotenv`](https://github.com/motdotla/dotenv) | `^17.3.1` | Loads environment variables from `.env` files into `process.env` |
-| [`cross-env`](https://github.com/kentcdodds/cross-env) | `^10.1.0` | Sets environment variables (`TEST_ENV`) in a cross-platform way (Windows + Unix) |
-| [`husky`](https://typicode.github.io/husky/) | `^9.1.7` | Manages Git hooks (`pre-commit`, `pre-push`) to enforce quality gates before commits and pushes |
+| Package                                                | Version   | Role                                                                                            |
+| ------------------------------------------------------ | --------- | ----------------------------------------------------------------------------------------------- |
+| [`dotenv`](https://github.com/motdotla/dotenv)         | `^17.3.1` | Loads environment variables from `.env` files into `process.env`                                |
+| [`cross-env`](https://github.com/kentcdodds/cross-env) | `^10.1.0` | Sets environment variables (`TEST_ENV`) in a cross-platform way (Windows + Unix)                |
+| [`husky`](https://typicode.github.io/husky/)           | `^9.1.7`  | Manages Git hooks (`pre-commit`, `pre-push`) to enforce quality gates before commits and pushes |
 
 ---
 
@@ -195,11 +195,11 @@ The framework uses `.env` files to manage environment-specific settings. The env
 
 ### Available environment files
 
-| File | Environment | Notes |
-|---|---|---|
-| `.env.example` | Template | Copy this to create your own `.env` |
-| `.env.qa` | QA | Points to `https://qa.ateneaconocimientos.com/` |
-| `.env` | Local / default | Git-ignored; created by the developer |
+| File           | Environment     | Notes                                           |
+| -------------- | --------------- | ----------------------------------------------- |
+| `.env.example` | Template        | Copy this to create your own `.env`             |
+| `.env.qa`      | QA              | Points to `https://qa.ateneaconocimientos.com/` |
+| `.env`         | Local / default | Git-ignored; created by the developer           |
 
 ### Setup for local development
 
@@ -283,18 +283,18 @@ npx playwright test -g "TC-03"
 
 All scripts are defined in `package.json`:
 
-| Script | Command | Description |
-|---|---|---|
-| `test` | `playwright test` | Run all tests (default env) |
-| `test:qa` | `cross-env TEST_ENV=qa playwright test` | Run tests against QA environment |
-| `test:headed` | `playwright test --headed` | Run tests with visible browser |
-| `test:ci` | `playwright test --reporter=line` | CI-friendly minimal output |
-| `report:open` | `playwright show-report` | Open the last HTML test report |
-| `typecheck` | `tsc --noEmit` | TypeScript type-check without compiling |
-| `lint` | `eslint . --ext .ts` | Lint all TypeScript files |
-| `lint:fix` | `npm run lint -- --fix` | Auto-fix linting issues |
-| `format` | `prettier "**/*.{ts,js,json,md}" --write` | Format all supported files |
-| `format:check` | `npm run format -- --check` | Check formatting without making changes |
+| Script         | Command                                   | Description                             |
+| -------------- | ----------------------------------------- | --------------------------------------- |
+| `test`         | `playwright test`                         | Run all tests (default env)             |
+| `test:qa`      | `cross-env TEST_ENV=qa playwright test`   | Run tests against QA environment        |
+| `test:headed`  | `playwright test --headed`                | Run tests with visible browser          |
+| `test:ci`      | `playwright test --reporter=line`         | CI-friendly minimal output              |
+| `report:open`  | `playwright show-report`                  | Open the last HTML test report          |
+| `typecheck`    | `tsc --noEmit`                            | TypeScript type-check without compiling |
+| `lint`         | `eslint . --ext .ts`                      | Lint all TypeScript files               |
+| `lint:fix`     | `npm run lint -- --fix`                   | Auto-fix linting issues                 |
+| `format`       | `prettier "**/*.{ts,js,json,md}" --write` | Format all supported files              |
+| `format:check` | `npm run format -- --check`               | Check formatting without making changes |
 
 ---
 
@@ -308,28 +308,28 @@ Located in the `pages/` directory. Each page object class encapsulates the locat
 
 Handles navigation from the home page.
 
-| Method | Description |
-|---|---|
-| `NavigateToHome()` | Navigates to the application root (`/`) |
+| Method                 | Description                                       |
+| ---------------------- | ------------------------------------------------- |
+| `NavigateToHome()`     | Navigates to the application root (`/`)           |
 | `NavigateToRegister()` | Clicks the "Crear cuenta" (Create Account) button |
 
 #### `RegisterPage` (`pages/registerPage.ts`)
 
 Handles all interactions on the student registration form.
 
-| Method | Description |
-|---|---|
-| `inputNameValue(name)` | Fills the first name field |
-| `inputLastNameValue(lastName)` | Fills the last name field |
-| `inputEmailValue(email)` | Fills the email field |
-| `inputPasswordValue(password)` | Fills the password field |
-| `inputConfirmPasswordValue(password)` | Fills the confirm password field |
-| `clickShowPassword()` | Toggles password visibility |
-| `clickShowConfirmPassword()` | Toggles confirm password visibility |
-| `clickTermsAndConditionsCheckbox()` | Checks the T&C acceptance checkbox |
-| `clickTermsAndConditionsLink()` | Navigates to terms and conditions |
-| `clickPrivacyPolicyLink()` | Navigates to the privacy policy |
-| `clickCreateAccountBtn()` | Submits the registration form |
+| Method                                             | Description                                                    |
+| -------------------------------------------------- | -------------------------------------------------------------- |
+| `inputNameValue(name)`                             | Fills the first name field                                     |
+| `inputLastNameValue(lastName)`                     | Fills the last name field                                      |
+| `inputEmailValue(email)`                           | Fills the email field                                          |
+| `inputPasswordValue(password)`                     | Fills the password field                                       |
+| `inputConfirmPasswordValue(password)`              | Fills the confirm password field                               |
+| `clickShowPassword()`                              | Toggles password visibility                                    |
+| `clickShowConfirmPassword()`                       | Toggles confirm password visibility                            |
+| `clickTermsAndConditionsCheckbox()`                | Checks the T&C acceptance checkbox                             |
+| `clickTermsAndConditionsLink()`                    | Navigates to terms and conditions                              |
+| `clickPrivacyPolicyLink()`                         | Navigates to the privacy policy                                |
+| `clickCreateAccountBtn()`                          | Submits the registration form                                  |
 | `RegisterStudent(name, lastName, email, password)` | **Orchestrator method** — completes the full registration flow |
 
 #### `EmailConfirmationModal` (`pages/emailConfirmationModal.ts`)
@@ -344,9 +344,9 @@ Located in the `tests/` directory.
 
 #### `register.spec.ts`
 
-| Test ID | Name | Description |
-|---|---|---|
-| TC-03 | Student Registration (Sign up) | Verifies that a new student can register successfully. Validates the API response returns HTTP 201 and confirms the user is redirected to the verification-pending page with the expected text visible. |
+| Test ID | Name                           | Description                                                                                                                                                                                             |
+| ------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TC-03   | Student Registration (Sign up) | Verifies that a new student can register successfully. Validates the API response returns HTTP 201 and confirms the user is redirected to the verification-pending page with the expected text visible. |
 
 **Test flow for TC-03:**
 
@@ -367,9 +367,9 @@ Located in `utils/helpers.ts`.
 
 The `Helpers` class provides reusable assertion and verification methods shared across test specs.
 
-| Method | Parameters | Description |
-|---|---|---|
-| `verifyVisibleText(text)` | `text: string` | Asserts that an element containing the given text is visible on the page |
+| Method                                  | Parameters                                        | Description                                                                                                                      |
+| --------------------------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `verifyVisibleText(text)`               | `text: string`                                    | Asserts that an element containing the given text is visible on the page                                                         |
 | `checkAPIResponse(url, method, status)` | `url: string`, `method: string`, `status: number` | Intercepts a network response matching the given URL, HTTP method, and status code. Waits until a matching response is captured. |
 
 ---
@@ -378,25 +378,25 @@ The `Helpers` class provides reusable assertion and verification methods shared 
 
 File: `playwright.config.ts`
 
-| Option | Value | Notes |
-|---|---|---|
-| `testDir` | `./tests` | Directory where test specs are found |
-| `fullyParallel` | `true` | Tests run in parallel by default |
-| `forbidOnly` | `true` (CI only) | Fails build if `test.only` is left in code |
-| `retries` | `2` (CI) / `0` (local) | Retries failing tests in CI |
-| `workers` | `1` (CI) / auto (local) | Limits concurrency in CI |
-| `reporter` | `html` | Generates an HTML report after each run |
-| `screenshot` | `only-on-failure` | Screenshots are captured only when a test fails |
-| `video` | `retain-on-failure` | Video recording is kept only for failed tests |
-| `trace` | `on-first-retry` | Trace is collected on the first retry of a failed test |
+| Option          | Value                   | Notes                                                  |
+| --------------- | ----------------------- | ------------------------------------------------------ |
+| `testDir`       | `./tests`               | Directory where test specs are found                   |
+| `fullyParallel` | `true`                  | Tests run in parallel by default                       |
+| `forbidOnly`    | `true` (CI only)        | Fails build if `test.only` is left in code             |
+| `retries`       | `2` (CI) / `0` (local)  | Retries failing tests in CI                            |
+| `workers`       | `1` (CI) / auto (local) | Limits concurrency in CI                               |
+| `reporter`      | `html`                  | Generates an HTML report after each run                |
+| `screenshot`    | `only-on-failure`       | Screenshots are captured only when a test fails        |
+| `video`         | `retain-on-failure`     | Video recording is kept only for failed tests          |
+| `trace`         | `on-first-retry`        | Trace is collected on the first retry of a failed test |
 
 **Configured browsers (projects):**
 
-| Browser | Device Emulation |
-|---|---|
-| Chromium | Desktop Chrome |
-| Firefox | Desktop Firefox |
-| WebKit | Desktop Safari |
+| Browser  | Device Emulation |
+| -------- | ---------------- |
+| Chromium | Desktop Chrome   |
+| Firefox  | Desktop Firefox  |
+| WebKit   | Desktop Safari   |
 
 ---
 
@@ -424,13 +424,13 @@ npm run lint:fix   # auto-fix where possible
 
 Configuration: `.prettierrc.json`
 
-| Rule | Value |
-|---|---|
-| `printWidth` | 100 characters |
-| `singleQuote` | `true` |
-| `trailingComma` | `all` |
-| `tabWidth` | 4 spaces |
-| `semi` | `true` |
+| Rule            | Value          |
+| --------------- | -------------- |
+| `printWidth`    | 100 characters |
+| `singleQuote`   | `true`         |
+| `trailingComma` | `all`          |
+| `tabWidth`      | 4 spaces       |
+| `semi`          | `true`         |
 
 Run formatting:
 
@@ -472,19 +472,20 @@ npm run test         # Full Playwright test run (line reporter)
 File: `.github/workflows/playwright.yml`
 
 The workflow is triggered on:
+
 - **Push** to `main` or `master`
 - **Pull Request** targeting `main` or `master`
 
 ### Workflow steps
 
-| Step | Action |
-|---|---|
-| Checkout code | `actions/checkout@v4` |
-| Set up Node.js | `actions/setup-node@v4` with `lts/*` |
-| Install dependencies | `npm ci` |
-| Install Playwright browsers | `npx playwright install --with-deps` |
-| Run tests | `npx playwright test` (with `TEST_ENV=qa`) |
-| Upload HTML report | `actions/upload-artifact@v4` (retained for 30 days, even on failure) |
+| Step                        | Action                                                               |
+| --------------------------- | -------------------------------------------------------------------- |
+| Checkout code               | `actions/checkout@v4`                                                |
+| Set up Node.js              | `actions/setup-node@v4` with `lts/*`                                 |
+| Install dependencies        | `npm ci`                                                             |
+| Install Playwright browsers | `npx playwright install --with-deps`                                 |
+| Run tests                   | `npx playwright test` (with `TEST_ENV=qa`)                           |
+| Upload HTML report          | `actions/upload-artifact@v4` (retained for 30 days, even on failure) |
 
 > The `TEST_ENV` environment variable is set to `qa` in the workflow, so tests always run against the QA environment in CI.
 
@@ -516,8 +517,8 @@ In CI, the report is uploaded as a GitHub Actions artifact named `playwright-rep
 
 TypeScript path aliases are configured in `tsconfig.json` to keep imports clean and readable:
 
-| Alias | Maps to |
-|---|---|
+| Alias      | Maps to   |
+| ---------- | --------- |
 | `@pages/*` | `pages/*` |
 | `@tests/*` | `tests/*` |
 | `@utils/*` | `utils/*` |
@@ -535,21 +536,23 @@ import { Helpers } from '@utils/helpers';
 ## Contributing
 
 1. **Create a branch** from `main` for your work:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
+
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
 
 2. **Write or update Page Objects** in `pages/` for any new UI interactions.
 
 3. **Write test specs** in `tests/` following the existing naming convention (`<feature>.spec.ts`).
 
 4. **Ensure all checks pass** before pushing:
-   ```bash
-   npm run lint
-   npm run format:check
-   npm run typecheck
-   npm test
-   ```
+
+    ```bash
+    npm run lint
+    npm run format:check
+    npm run typecheck
+    npm test
+    ```
 
 5. **Open a Pull Request** against `main`. The GitHub Actions workflow will run all tests automatically.
 
